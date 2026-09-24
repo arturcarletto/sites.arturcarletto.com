@@ -45,14 +45,25 @@
 ## Commercial redesign — 2026-09-23
 
 - [x] Raised the minimum readable scale for labels, navigation, metadata, CTAs, service descriptions, and demonstration notices.
-- [x] Added a persistent WhatsApp action with safe-area spacing and explicit attribution to Artur.
+- [x] Added a contextual WhatsApp action on wider screens, with an explicit demonstration disclosure before the real contact; kept mobile CTAs in flow to avoid overlaying content.
 - [x] Replaced generic or decorative service markers with outcome labels and contextual actions.
-- [x] Replaced the climatization “SC” placeholder with an editorial regional-service composition that remains explicitly demonstrative.
-- [x] Added an accessible keyboard-operated material selector for the furniture concept.
+- [x] Replaced the climatization placeholder with official IBGE geometry for Santa Catarina and Joinville, without inferring service coverage.
+- [x] Added an accessible keyboard-operated material selector that changes image, application, and explanation for the furniture concept.
 - [x] Strengthened service CTAs in the commercial, climatization, automotive, and dentistry flows.
 - [x] Removed decorative numbering where it did not help orientation and replaced the fictional furniture quotation with a direct design principle.
 - [x] Verified the eight public pages at desktop and mobile widths without horizontal overflow.
 - [x] Passed ESLint and the optimized production build after the redesign.
+
+## Final refinement — 2026-09-24
+
+- [x] Removed the development-time Google Fonts dependency by self-hosting the project font subsets.
+- [x] Replaced abstract Home artwork with linked concept previews and brought demonstrations into the `/sites` commercial path.
+- [x] Added accessible accordions to climatization and dentistry, plus a concrete first-conversation flow for dentistry.
+- [x] Added a real geographic reference to climatization and removed unsupported routes, radius, and coverage claims.
+- [x] Made the furniture material selector visually demonstrative and added an original metal-detail scene.
+- [x] Added an honest automotive inspection explorer instead of fabricating a before/after result.
+- [x] Removed the fixed WhatsApp shortcut at mobile and tablet widths so it never obscures responsive content.
+- [x] Completed the final 56-combination responsive matrix, interaction checks, lint, production build, and runtime review.
 
 ## Before production
 

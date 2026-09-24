@@ -4,8 +4,10 @@ import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ModelCard } from "@/components/model-card";
 import { directContactHref, getWhatsappHref } from "@/config/site";
 import { createPageMetadata } from "@/config/metadata";
+import { modelConcepts } from "@/data/models";
 
 export const metadata = createPageMetadata({
   title: "Sites e landing pages para empresas",
@@ -14,13 +16,13 @@ export const metadata = createPageMetadata({
 });
 
 const deliverables = [
-  ["Para uma oferta", "Landing pages", "Uma oferta específica, argumentos na ordem certa e um caminho curto até o contato."],
-  ["Para a empresa", "Sites institucionais", "Serviços, áreas atendidas e diferenciais organizados para quem ainda não conhece a empresa."],
-  ["Para campanhas", "Páginas de captação", "Estruturas para campanhas, formulários e pedidos de orçamento, sem distrações desnecessárias."],
-  ["Para continuar", "Manutenção e evolução", "Novas páginas, correções e melhorias sem reconstruir tudo a cada mudança."],
+  ["Para uma oferta", "Landing pages", "Página focada em uma oferta ou serviço específico, organizada para levar o visitante rapidamente até o contato."],
+  ["Para a empresa", "Sites institucionais", "Apresenta empresa, serviços, diferenciais, regiões atendidas e formas de contato em uma estrutura clara."],
+  ["Para campanhas", "Páginas de captação", "Estrutura enxuta para campanhas e anúncios, com foco em gerar contato ou pedido de orçamento."],
+  ["Para continuar", "Manutenção e evolução", "Melhorias, novas páginas e correções sem precisar reconstruir todo o projeto."],
 ];
 
-const included = ["Integração direta com WhatsApp", "Formulários quando fizerem sentido", "SEO técnico e local básico", "Experiência responsiva de verdade", "Otimização de performance", "Estrutura preparada para manutenção"];
+const included = ["Diagnóstico e estrutura", "Conteúdo e hierarquia", "Design responsivo", "Desenvolvimento", "WhatsApp e formulários", "SEO técnico básico", "Performance", "Configuração e publicação", "Revisão final", "Base preparada para manutenção"];
 
 export default function SitesPage() {
   const whatsapp = getWhatsappHref("Olá, Artur. Quero conversar sobre um site para minha empresa.");
@@ -37,7 +39,7 @@ export default function SitesPage() {
         </section>
 
         <section className="sites-proof"><div className="shell sites-proof__grid">
-          <div className="sites-proof__statement"><span>01</span><h2>Bonito é o começo.<br />Útil é o critério.</h2></div>
+          <div className="sites-proof__statement"><p>Critério de projeto</p><h2>Bonito é o começo.<br />Útil é o critério.</h2></div>
           <div className="sites-proof__copy"><p>Um site comercial precisa responder às dúvidas que travam o contato: “é para mim?”, “parece confiável?”, “como funciona?” e “como peço um orçamento?”.</p><p>Por isso, conteúdo, hierarquia, mobile e velocidade são tratados como parte do produto — não como acabamento.</p></div>
         </div></section>
 
@@ -48,9 +50,17 @@ export default function SitesPage() {
         </section>
 
         <section className="included-section"><div className="shell included-grid">
-          <div><p className="eyebrow eyebrow--light">Fundamentos da entrega</p><h2>Presença profissional, sem atrito no caminho.</h2><p>O projeto combina decisões de negócio com uma implementação cuidadosa. Tudo que o visitante percebe — e o que ele não deveria precisar perceber — faz parte.</p></div>
+          <div><p className="eyebrow eyebrow--light">O que entra em um projeto</p><h2>Da primeira pergunta à publicação.</h2><p>O escopo é ajustado à necessidade da empresa, mas a entrega considera conteúdo, experiência e implementação como um único trabalho.</p></div>
           <ul>{included.map((item) => <li key={item}><Check /> {item}</li>)}</ul>
         </div></section>
+
+        <section className="section shell sites-demos">
+          <SectionHeading eyebrow="Veja isso funcionando" title="Não precisa imaginar o nível da entrega." copy="Abra conceitos completos para segmentos diferentes. São demonstrações autorais — não clientes ou resultados apresentados como reais." />
+          <div className="sites-demo-grid">
+            {modelConcepts.slice(0, 3).map((model, index) => <ModelCard model={model} key={model.slug} priority={index === 0} />)}
+          </div>
+          <div className="section-link-row"><Link href="/modelos" className="text-link">Ver os quatro conceitos <ArrowRight /></Link></div>
+        </section>
 
         <section className="section shell results-section">
           <SectionHeading eyebrow="Decisões de produto" title="O site assume parte do trabalho comercial." />
@@ -65,8 +75,6 @@ export default function SitesPage() {
           <SectionHeading eyebrow="Como funciona" title="Do diagnóstico à publicação, sem etapas escondidas." />
           <ol className="sites-steps"><li><span>01</span><div><h3>Contexto</h3><p>Entendo a empresa, a oferta, o público e a origem dos acessos.</p></div></li><li><span>02</span><div><h3>Estrutura</h3><p>Organizo mensagem, páginas, fluxos e direção visual.</p></div></li><li><span>03</span><div><h3>Construção</h3><p>Desenvolvo, testo, reviso no mobile e preparo para publicação.</p></div></li><li><span>04</span><div><h3>Evolução</h3><p>O site pode ganhar novas páginas e melhorias com o negócio.</p></div></li></ol>
         </div></section>
-
-        <section className="model-invite shell"><div><p className="eyebrow">Veja antes de imaginar</p><h2>Conceitos completos para negócios locais.</h2></div><p>Explore páginas demonstrativas com identidades e estratégias diferentes. Elas mostram o padrão de execução, não clientes atendidos.</p><Link href="/modelos" className="text-link">Abrir galeria <ArrowRight /></Link></section>
 
         <section className="cta-section shell" id="contato">
           <p className="eyebrow">Seu projeto</p><h2>Vamos entender o que o seu site precisa resolver?</h2>

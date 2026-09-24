@@ -14,7 +14,8 @@ The main identity is quiet, technical, and editorial. It uses warm paper-like su
 - Motion: small translate or color transitions between 160–400 ms.
 - Supporting labels should remain at or above the practical 12 px floor; longer supporting copy stays at 14–16 px.
 - Primary actions name the channel or outcome instead of relying on generic “contact” language.
-- The persistent WhatsApp control always identifies Artur, especially while a visitor is navigating a fictional concept.
+- On wider screens, the persistent WhatsApp control identifies Artur on portfolio pages. Inside a fictional concept, it first uses the business-appropriate intent and then discloses the demonstration before offering Artur's real contact.
+- At tablet and mobile widths up to 960 px, the fixed shortcut is removed so it cannot cover content or controls; contextual WhatsApp actions remain in the page flow.
 
 ## Concept identities
 
@@ -27,5 +28,5 @@ The main identity is quiet, technical, and editorial. It uses warm paper-like su
 
 All interactive elements retain visible focus. Body copy targets comfortable line lengths. Touch targets are at least 44 px. Reduced-motion preferences remove smooth scrolling and transforms. Color is never the only carrier of meaning.
 
-The furniture material selector follows the tab pattern, including arrow-key navigation and selected-state semantics. Demonstration CTAs remain visually separate from the real contact with Artur.
+The furniture material selector and automotive inspection explorer follow the tab pattern, including arrow-key navigation and selected-state semantics. Climatization and dentistry accordions expose expanded state and named panels. Demonstration CTAs remain visually separate from the real contact with Artur.
 

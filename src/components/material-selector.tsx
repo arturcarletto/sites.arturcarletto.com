@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useId, useState, type KeyboardEvent } from "react";
 
 const materials = [
@@ -9,6 +10,8 @@ const materials = [
     title: "Calor visual e desenho contínuo.",
     description: "Veios, tonalidade e sentido das peças ajudam a integrar volumes e criar uma presença mais acolhedora.",
     examples: "Painéis · armários · bancadas",
+    image: "/images/moveis-home-office.png",
+    imageAlt: "Home office planejado com marcenaria em madeira natural",
   },
   {
     id: "pedra",
@@ -16,6 +19,8 @@ const materials = [
     title: "Resistência nas superfícies de uso intenso.",
     description: "Textura, porosidade e manutenção orientam a escolha para que o acabamento funcione na rotina, não apenas na fotografia.",
     examples: "Tampos · ilhas · áreas molhadas",
+    image: "/images/moveis-hero.png",
+    imageAlt: "Cozinha planejada com ilha e superfície de pedra clara",
   },
   {
     id: "metal",
@@ -23,6 +28,8 @@ const materials = [
     title: "Estrutura leve e detalhes precisos.",
     description: "Perfis, puxadores e apoios metálicos criam contraste, reforçam a estrutura e permitem encontros mais delicados.",
     examples: "Estruturas · puxadores · divisórias",
+    image: "/images/moveis-metal.png",
+    imageAlt: "Home office planejado com estruturas e detalhes em metal escuro",
   },
 ] as const;
 
@@ -48,6 +55,15 @@ export function MaterialSelector() {
 
   return (
     <div className={`material-selector material-selector--${active.id}`}>
+      <div className="material-selector__image" aria-live="polite">
+        <Image
+          key={active.id}
+          src={active.image}
+          alt={active.imageAlt}
+          fill
+          sizes="(max-width: 800px) 100vw, 50vw"
+        />
+      </div>
       <div className="material-selector__tabs" role="tablist" aria-label="Conheça os materiais">
         {materials.map((material, index) => (
           <button

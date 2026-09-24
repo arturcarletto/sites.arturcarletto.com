@@ -1,19 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Newsreader } from "next/font/google";
+import localFont from "next/font/local";
 import { siteConfig } from "@/config/site";
 import { FloatingWhatsapp } from "@/components/floating-whatsapp";
 import "./globals.css";
 
-const manrope = Manrope({
+const manrope = localFont({
+  src: "./fonts/manrope-latin.woff2",
   variable: "--font-manrope",
-  subsets: ["latin"],
+  weight: "200 800",
+  style: "normal",
   display: "swap",
+  fallback: ["Arial", "sans-serif"],
 });
 
-const newsreader = Newsreader({
+const newsreader = localFont({
+  src: "./fonts/newsreader-latin.woff2",
   variable: "--font-newsreader",
-  subsets: ["latin"],
+  weight: "200 800",
+  style: "normal",
   display: "swap",
+  fallback: ["Georgia", "serif"],
 });
 
 export const metadata: Metadata = {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ConceptBar } from "@/components/concept-bar";
+import { AutoInspectionExplorer } from "@/components/auto-inspection-explorer";
 import { DemoNote } from "@/components/demo-note";
 import { ArrowRight } from "@/components/icons";
 import { createPageMetadata } from "@/config/metadata";
@@ -11,7 +12,7 @@ export const metadata = createPageMetadata({
   path: "/modelos/estetica-automotiva",
 });
 
-const autoServices = [["Proteção", "Vitrificação", "Proteção e brilho com preparação criteriosa da pintura."], ["Correção", "Polimento técnico", "Correção de marcas e recuperação visual do acabamento."], ["Interior", "Higienização", "Cuidado profundo de bancos, carpetes e superfícies internas."], ["Acabamento", "Detalhamento", "Atenção minuciosa às áreas que uma lavagem comum ignora."]];
+const autoServices = [["Proteção", "Vitrificação", "Camada de proteção aplicada após limpeza e preparação da pintura."], ["Correção", "Polimento técnico", "Tratamento para reduzir marcas e recuperar a uniformidade visual da pintura."], ["Interior", "Higienização", "Limpeza de bancos, carpetes e superfícies internas conforme o material."], ["Manutenção", "Proteção de superfícies", "Aplicação apropriada ao tipo de material, acompanhada de orientação de cuidado."]];
 
 export default function AutoPage() {
   return (
@@ -21,16 +22,16 @@ export default function AutoPage() {
         <section className="auto-hero">
           <Image src="/images/automotiva-hero.png" alt="Automóvel grafite recebendo detalhamento em estúdio escuro" fill loading="eager" fetchPriority="high" sizes="100vw" />
           <div className="auto-hero__shade" />
-          <div className="auto-hero__content"><p>Detailing studio / conceito</p><h1>O detalhe muda<br />a <em>presença.</em></h1><span>Correção, proteção e acabamento para quem percebe a diferença entre limpo e impecável.</span><a href="#agenda">Avaliar meu veículo <ArrowRight /></a></div>
+          <div className="auto-hero__content"><p>Detailing studio / conceito</p><h1>O detalhe muda<br />a <em>presença.</em></h1><span>Polimento, vitrificação, higienização e proteção organizados pelo estado do veículo e pelo objetivo de uso.</span><a href="#agenda">Avaliar meu veículo <ArrowRight /></a></div>
         </section>
 
-        <section className="auto-statement"><span>Precisão em cada etapa</span><h2>Não é sobre esconder marcas.<br />É sobre <em>recuperar a leitura do carro.</em></h2></section>
+        <section className="auto-statement"><span>Precisão em cada etapa</span><h2>O serviço parte do estado do veículo.<br /><em>Não de um pacote genérico.</em></h2></section>
 
-        <section className="auto-services" id="servicos">{autoServices.map(([signal, title, text]) => <article key={title}><span>{signal}</span><div><h3>{title}</h3><p>{text}</p></div><a href="#agenda">Solicitar avaliação <ArrowRight /></a></article>)}</section>
+        <section className="auto-services" id="servicos">{autoServices.map(([signal, title, text]) => <article key={title}><span>{signal}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}<a className="auto-services__action" href="#agenda">Solicitar avaliação do veículo <ArrowRight /></a></section>
 
-        <section className="auto-feature"><div className="auto-feature__image"><Image src="/images/automotiva-detalhe.png" alt="Detalhe do capô e farol com reflexos precisos após correção de pintura" fill sizes="(max-width: 800px) 100vw, 58vw" /></div><div><p>Proteção de verdade</p><h2>Brilho é consequência de uma superfície bem preparada.</h2><span>A etapa mais importante acontece antes do produto final. Inspeção, descontaminação e correção determinam a qualidade do acabamento.</span><ul><li>Leitura da pintura sob luz controlada</li><li>Processo definido para cada superfície</li><li>Orientação de manutenção após a entrega</li></ul></div></section>
+        <AutoInspectionExplorer />
 
-        <section className="auto-method" id="metodo"><div><p>Método NÍVEL</p><h2>Inspecionar.<br />Corrigir.<br /><em>Proteger.</em></h2></div><ol><li><span>01</span><p>Avaliação visual e definição do objetivo.</p></li><li><span>02</span><p>Preparação detalhada das superfícies.</p></li><li><span>03</span><p>Execução sob iluminação controlada.</p></li><li><span>04</span><p>Revisão final e orientação de cuidado.</p></li></ol></section>
+        <section className="auto-method" id="metodo"><div><p>Método de atendimento</p><h2>Inspecionar.<br />Corrigir.<br /><em>Proteger.</em></h2></div><ol><li><span>01</span><p>Avaliação visual e definição do objetivo.</p></li><li><span>02</span><p>Preparação detalhada das superfícies.</p></li><li><span>03</span><p>Execução sob iluminação controlada.</p></li><li><span>04</span><p>Revisão final e orientação de cuidado.</p></li></ol></section>
 
         <section className="auto-contact" id="agenda"><div><p>Seu carro, no melhor estado possível.</p><h2>Solicite uma avaliação.</h2></div><DemoNote accent="#d09a5d" /></section>
       </main>

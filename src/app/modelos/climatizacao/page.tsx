@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ConceptBar } from "@/components/concept-bar";
 import { DemoNote } from "@/components/demo-note";
+import { Accordion } from "@/components/accordion";
 import { ArrowRight, Check } from "@/components/icons";
+import { SantaCatarinaMap } from "@/components/santa-catarina-map";
 import { createPageMetadata } from "@/config/metadata";
 
 export const metadata = createPageMetadata({
@@ -16,6 +18,21 @@ const services = [
   ["Prevenir falhas", "Manutenção", "Diagnóstico e manutenção preventiva para evitar paradas."],
   ["Qualidade do ar", "Higienização", "Limpeza técnica para melhorar o ar e o desempenho do equipamento."],
   ["Cada rotina", "Residencial e comercial", "Soluções pensadas para o perfil de cada ambiente."],
+];
+
+const faq = [
+  {
+    title: "Como saber a capacidade ideal do aparelho?",
+    content: "A metragem é só o começo. Incidência solar, quantidade de pessoas e equipamentos também entram no dimensionamento.",
+  },
+  {
+    title: "Quando a higienização deve ser feita?",
+    content: "A frequência depende do uso e do ambiente. Uma avaliação identifica o intervalo mais adequado para cada caso.",
+  },
+  {
+    title: "Vocês atendem ambientes comerciais?",
+    content: "Este conceito prevê atendimento residencial e comercial, com escopo confirmado antes do agendamento.",
+  },
 ];
 
 export default function ClimatizacaoPage() {
@@ -45,9 +62,9 @@ export default function ClimatizacaoPage() {
 
         <section className="clima-process clima-section" id="processo"><div className="clima-heading"><div><p>Como funciona</p><h2>Um caminho curto até o conforto.</h2></div></div><ol><li><span>01</span><h3>Conte o que precisa</h3><p>Ambiente, tipo de equipamento e o melhor horário para falar.</p></li><li><span>02</span><h3>Receba a orientação</h3><p>A necessidade é entendida antes de indicar a solução.</p></li><li><span>03</span><h3>Agende o serviço</h3><p>Data combinada e preparação explicada com antecedência.</p></li></ol></section>
 
-        <section className="clima-area"><div><p>Área de atendimento demonstrativa</p><h2>Joinville e região</h2><span>A disponibilidade real seria confirmada no contato com a empresa.</span></div><div className="clima-region" aria-label="Exemplo editorial de uma operação regional com base em Joinville"><span className="clima-region__label">Composição demonstrativa</span><div className="clima-region__route" aria-hidden="true"><i /><i /><i /></div><div className="clima-region__city clima-region__city--main"><strong>Joinville</strong><span>base da operação</span></div><div className="clima-region__city clima-region__city--north"><strong>Região norte</strong><span>rota exemplo</span></div><div className="clima-region__city clima-region__city--coast"><strong>Litoral norte</strong><span>rota exemplo</span></div></div></section>
+        <section className="clima-area"><div><p>Área de atendimento demonstrativa</p><h2>Joinville e região</h2><span>O mapa localiza Joinville no Norte de Santa Catarina. A cobertura real seria definida pela empresa antes da publicação.</span></div><SantaCatarinaMap /></section>
 
-        <section className="clima-faq clima-section" id="duvidas"><div><p>Dúvidas frequentes</p><h2>Informação clara antes de agendar.</h2></div><div>{["Como saber a capacidade ideal do aparelho?", "Quando a higienização deve ser feita?", "Vocês atendem ambientes comerciais?"].map((question, index) => <details key={question} open={index === 0}><summary>{question}<span>+</span></summary><p>{index === 0 ? "A metragem é só o começo. Incidência solar, quantidade de pessoas e equipamentos também entram no dimensionamento." : index === 1 ? "A frequência depende do uso e do ambiente. Uma avaliação identifica o intervalo mais seguro para cada caso." : "Este conceito prevê atendimento residencial e comercial, com escopo confirmado antes do agendamento."}</p></details>)}</div></section>
+        <section className="clima-faq clima-section" id="duvidas"><div><p>Dúvidas frequentes</p><h2>Informação clara antes de agendar.</h2></div><Accordion items={faq} className="clima-accordion" /></section>
 
         <section className="clima-contact" id="orcamento"><div><p>Respire melhor. Viva com mais conforto.</p><h2>Pronto para cuidar da climatização do seu espaço?</h2></div><DemoNote accent="#20b9d6" /></section>
       </main>

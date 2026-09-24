@@ -35,26 +35,27 @@ export default function Home() {
           <div className="home-hero__copy">
             <p className="eyebrow"><span /> Engenheiro de Software · {siteConfig.shortLocation}</p>
             <h1>Produtos digitais sólidos.<br /><em>Sites que abrem conversas.</em></h1>
-            <p className="hero-lead">Eu sou Artur Carletto, Engenheiro de Software em Joinville. Projeto aplicações web, sites institucionais e landing pages com foco em uso real, velocidade e manutenção.</p>
+            <p className="hero-lead">Eu sou Artur Carletto, Engenheiro de Software em Joinville. Desenvolvo aplicações web, sites institucionais, landing pages e páginas comerciais para empresas — com foco em uso real, velocidade e manutenção.</p>
             <div className="hero-actions">
               <LinkButton href={primaryAction.href} variant="blue" external={primaryAction.external}>{primaryAction.label}</LinkButton>
               <Link href="/modelos" className="text-link">Ver demonstrações <ArrowRight /></Link>
             </div>
           </div>
-          <aside className="home-hero__visual" aria-label="Resumo do método de trabalho">
-            <div className="hero-orbit hero-orbit--one" />
-            <div className="hero-orbit hero-orbit--two" />
-            <div className="hero-brief">
-              <div className="hero-brief__top"><span>Antes de abrir o editor</span><small>método / 01</small></div>
-              <div className="hero-brief__body">
-                <strong>Começar pelas<br /><em>perguntas certas.</em></strong>
-                <dl>
-                  <div><dt>Negócio</dt><dd>o que precisa mudar?</dd></div>
-                  <div><dt>Pessoa</dt><dd>o que precisa ficar claro?</dd></div>
-                  <div><dt>Entrega</dt><dd>como saber se funcionou?</dd></div>
-                </dl>
-              </div>
-              <div className="hero-brief__foot"><span>Artur Carletto</span><span>Joinville · SC</span></div>
+          <aside className="home-hero__visual" aria-label="Prévias de conceitos demonstrativos navegáveis">
+            <div className="home-demo-stack">
+              <Link href="/modelos/estetica-automotiva" className="home-demo-preview home-demo-preview--main" aria-label="Abrir conceito de estética automotiva">
+                <Image src="/images/automotiva-hero.png" alt="Recorte do conceito demonstrativo de estética automotiva" fill sizes="(max-width: 700px) 78vw, 420px" priority />
+                <span><small>Conceito navegável</small>Estética automotiva <ArrowRight /></span>
+              </Link>
+              <Link href="/modelos/odontologia" className="home-demo-preview home-demo-preview--top" aria-label="Abrir conceito de odontologia">
+                <Image src="/images/odontologia-hero.png" alt="Recorte do conceito demonstrativo de odontologia" fill sizes="190px" />
+                <span>Odontologia</span>
+              </Link>
+              <Link href="/modelos/climatizacao" className="home-demo-preview home-demo-preview--mobile" aria-label="Abrir conceito de climatização">
+                <Image src="/images/climatizacao-hero.png" alt="Recorte do conceito demonstrativo de climatização em formato mobile" fill sizes="150px" />
+                <span>Climatização</span>
+              </Link>
+              <p className="home-demo-stack__note">Direções visuais diferentes.<br />A mesma base técnica.</p>
             </div>
           </aside>
         </section>

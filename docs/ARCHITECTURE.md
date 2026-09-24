@@ -6,7 +6,7 @@
 - React 19
 - TypeScript
 - Tailwind CSS 4 plus a small global design layer
-- `next/image` and `next/font`
+- `next/image` and `next/font/local`
 - ESLint with the Next.js configuration
 
 ## Structure
@@ -24,7 +24,9 @@ public/images/         Project-owned generated visual assets
 docs/                  Product, design, architecture, roadmap, asset records
 ```
 
-Pages remain Server Components. Navigation uses semantic HTML and a native `details` element on small screens, avoiding client JavaScript. Shared concept primitives cover only repeated structure; each concept route owns its visual composition.
+Pages remain Server Components. Navigation uses semantic HTML and a native `details` element on small screens, avoiding client JavaScript. Small Client Components are limited to interaction state for the contextual WhatsApp dialog, accordions, material selector, and automotive inspection explorer. Shared concept primitives cover only repeated structure; each concept route owns its visual composition.
+
+Manrope and Newsreader are stored as local subsets and loaded with `next/font/local`, so development and production do not depend on a Google Fonts network request. Asset provenance and licensing references live in `docs/ASSETS.md`.
 
 ## SEO
 

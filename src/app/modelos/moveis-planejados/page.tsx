@@ -30,7 +30,7 @@ export default function MoveisPage() {
           <div className="moveis-editorial__aside"><p>Ambientes</p><article><span>02</span><h3>Cozinhas</h3><p>Fluxo de uso, armazenamento e materiais definidos em conjunto.</p></article><article><span>03</span><h3>Dormitórios</h3><p>Organização silenciosa e materiais que convidam ao descanso.</p></article><article><span>04</span><h3>Corporativo</h3><p>Espaços que apoiam a operação e expressam a marca.</p></article></div>
         </section>
 
-        <section className="moveis-material"><MaterialSelector /><div><p>Matéria e permanência</p><h2>Bonito de longe.<br />Preciso de perto.</h2><span>Explore os materiais ao lado. Cada acabamento é avaliado por toque, luz, uso e manutenção — para permanecer bom muito depois da primeira fotografia.</span></div></section>
+        <section className="moveis-material"><MaterialSelector /><div><p>Matéria e permanência</p><h2>Materiais escolhidos<br />para a rotina.</h2><span>Explore as opções ao lado. A imagem, a aplicação e os critérios mudam juntos — uma prévia de como cada escolha pode ser explicada antes do orçamento.</span></div></section>
 
         <section className="moveis-process" id="processo"><div><p>Nosso processo</p><h2>Do primeiro traço<br />ao último ajuste.</h2></div><ol><li><span>01</span><div><h3>Imersão</h3><p>Entendemos o espaço, a rotina e as referências.</p></div></li><li><span>02</span><div><h3>Projeto</h3><p>Desenvolvemos layout, materiais e detalhes construtivos.</p></div></li><li><span>03</span><div><h3>Produção</h3><p>Acompanhamos a execução com critérios definidos.</p></div></li><li><span>04</span><div><h3>Instalação</h3><p>Finalizamos o ambiente e revisamos cada encontro.</p></div></li></ol></section>
 
