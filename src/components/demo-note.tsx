@@ -6,8 +6,8 @@ export function DemoNote({ accent = "#2459e0" }: { accent?: string }) {
 
   return (
     <div className="demo-note" style={{ "--demo-accent": accent } as React.CSSProperties}>
-      <p><strong>Este contato é parte da demonstração.</strong> Em um projeto publicado, o botão levaria ao WhatsApp real da empresa.</p>
-      {whatsapp ? <a href={whatsapp} target="_blank" rel="noreferrer">Falar com Artur no WhatsApp</a> : <Link href="/sites#contato">Falar sobre meu site</Link>}
+      <p><strong>Esta é uma demonstração, não uma empresa real.</strong> Em um projeto publicado, este botão levaria ao WhatsApp da empresa. Para criar uma experiência assim para o seu negócio, a conversa é diretamente com Artur.</p>
+      {whatsapp ? <a href={whatsapp} target="_blank" rel="noreferrer">Conversar com Artur</a> : <Link href="/sites#contato">Falar sobre meu site</Link>}
     </div>
   );
 }

@@ -11,6 +11,8 @@ export const metadata = createPageMetadata({
   title: "Conceito de site para climatização",
   description: "Conceito demonstrativo de landing page para uma empresa fictícia de climatização.",
   path: "/modelos/climatizacao",
+  ogImage: "/og/climatizacao",
+  ogImageAlt: "Conceito demonstrativo de site para climatização criado por Artur Carletto",
 });
 
 const services = [

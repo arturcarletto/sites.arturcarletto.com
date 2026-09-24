@@ -10,6 +10,8 @@ export const metadata = createPageMetadata({
   title: "Conceito de site para móveis planejados",
   description: "Conceito demonstrativo editorial para uma empresa fictícia de móveis planejados.",
   path: "/modelos/moveis-planejados",
+  ogImage: "/og/moveis-planejados",
+  ogImageAlt: "Conceito demonstrativo de site para móveis planejados criado por Artur Carletto",
 });
 
 export default function MoveisPage() {
@@ -23,7 +25,7 @@ export default function MoveisPage() {
           <div className="moveis-hero__content"><p>Marcenaria feita para o seu modo de viver</p><h1>Espaços com<br /><em>intenção.</em></h1><span>Projetos sob medida que unem arquitetura, matéria e a rotina de quem habita.</span><a href="#contato">Conversar sobre um ambiente <ArrowRight /></a></div>
         </section>
 
-        <section className="moveis-intro"><p>O que fazemos</p><h2>Não ocupamos espaços.<br /><em>Damos sentido a eles.</em></h2><span>Cada projeto parte das medidas, mas não termina nelas. Proporção, circulação, materiais e hábitos cotidianos definem uma solução verdadeiramente particular.</span></section>
+        <section className="moveis-intro"><p>O que fazemos</p><h2>Medida, circulação e uso.<br /><em>O projeto começa na rotina.</em></h2><span>Cada projeto parte das medidas, mas não termina nelas. Proporção, circulação, materiais e hábitos cotidianos definem uma solução verdadeiramente particular.</span></section>
 
         <section className="moveis-editorial" id="ambientes">
           <article className="moveis-editorial__large"><div><Image src="/images/moveis-home-office.png" alt="Home office planejado com estante em madeira e área de leitura" fill sizes="(max-width: 800px) 100vw, 65vw" /></div><span>01 / Home office e leitura</span><h3>Marcenaria que organiza trabalho, pausa e permanência no mesmo ambiente.</h3></article>

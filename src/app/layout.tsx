@@ -25,7 +25,7 @@ const newsreader = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: {
-    default: "Artur Carletto — Sites e landing pages",
+    default: "Artur Carletto — Sites para empresas",
     template: "%s — Artur Carletto",
   },
   description: siteConfig.description,
@@ -33,17 +33,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "/",
-    title: "Artur Carletto — Sites e landing pages",
+    url: siteConfig.baseUrl,
+    title: "Artur Carletto — Sites para empresas",
     description: siteConfig.description,
     siteName: "Artur Carletto",
+    images: [{
+      url: new URL("/og/home", siteConfig.baseUrl).toString(),
+      width: 1200,
+      height: 630,
+      alt: "Artur Carletto — sites para empresas que abrem conversas",
+    }],
   },
   twitter: {
-    card: "summary",
-    title: "Artur Carletto — Sites e landing pages",
+    card: "summary_large_image",
+    title: "Artur Carletto — Sites para empresas",
     description: siteConfig.description,
+    images: [{
+      url: new URL("/og/home", siteConfig.baseUrl).toString(),
+      alt: "Artur Carletto — sites para empresas que abrem conversas",
+    }],
   },
-  icons: { icon: "/favicon.ico" },
 };
 
 export const viewport: Viewport = {

@@ -10,6 +10,8 @@ export const metadata = createPageMetadata({
   title: "Conceito de site para estética automotiva",
   description: "Conceito demonstrativo de landing page para um estúdio fictício de estética automotiva.",
   path: "/modelos/estetica-automotiva",
+  ogImage: "/og/estetica-automotiva",
+  ogImageAlt: "Conceito demonstrativo de site para estética automotiva criado por Artur Carletto",
 });
 
 const autoServices = [["Proteção", "Vitrificação", "Camada de proteção aplicada após limpeza e preparação da pintura."], ["Correção", "Polimento técnico", "Tratamento para reduzir marcas e recuperar a uniformidade visual da pintura."], ["Interior", "Higienização", "Limpeza de bancos, carpetes e superfícies internas conforme o material."], ["Manutenção", "Proteção de superfícies", "Aplicação apropriada ao tipo de material, acompanhada de orientação de cuidado."]];

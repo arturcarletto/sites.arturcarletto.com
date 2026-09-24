@@ -6,7 +6,7 @@ export const siteConfig = {
   location: "Joinville, Santa Catarina, Brasil",
   shortLocation: "Joinville, SC",
   description:
-    "Sites e landing pages desenvolvidos diretamente por Artur Carletto, Engenheiro de Software em Joinville, para empresas que precisam gerar confiança e conversas.",
+    "Sites, landing pages e soluções digitais pensados para apresentar melhor sua empresa e facilitar novas conversas comerciais.",
   baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sites.arturcarletto.com",
   professionalBaseUrl: "https://arturcarletto.com",
   contact: {

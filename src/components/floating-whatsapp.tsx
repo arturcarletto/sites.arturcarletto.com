@@ -28,6 +28,8 @@ export function FloatingWhatsapp() {
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileVisible, setIsMobileVisible] = useState(false);
+  const [isNearInlineContact, setIsNearInlineContact] = useState(false);
   const demo = demoContact[pathname as keyof typeof demoContact];
   const href = getWhatsappHref(demo
     ? `Olá, Artur. Vi o conceito demonstrativo de ${demo.subject} e gostaria de conversar sobre um site para minha empresa.`
@@ -41,13 +43,31 @@ export function FloatingWhatsapp() {
     if (!isOpen && dialog.open) dialog.close();
   }, [isOpen]);
 
+  useEffect(() => {
+    const updateVisibility = () => setIsMobileVisible(window.scrollY > 360);
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+
+    const contactSections = document.querySelectorAll(".cta-section, .site-footer");
+    const observer = new IntersectionObserver(
+      (entries) => setIsNearInlineContact(entries.some((entry) => entry.isIntersecting)),
+      { rootMargin: "0px 0px -18% 0px", threshold: 0.05 },
+    );
+    contactSections.forEach((element) => observer.observe(element));
+
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      observer.disconnect();
+    };
+  }, [pathname]);
+
   if (!href) return null;
 
   if (demo) {
     return (
       <>
         <button
-          className="floating-whatsapp"
+          className="floating-whatsapp floating-whatsapp--demo"
           type="button"
           aria-haspopup="dialog"
           onClick={() => setIsOpen(true)}
@@ -88,7 +108,7 @@ export function FloatingWhatsapp() {
 
   return (
     <a
-      className="floating-whatsapp"
+      className={`floating-whatsapp floating-whatsapp--artur${isMobileVisible && !isNearInlineContact ? " is-mobile-visible" : ""}`}
       href={href}
       target="_blank"
       rel="noreferrer"

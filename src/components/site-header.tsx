@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Menu } from "@/components/icons";
+import { MobileNavigation } from "@/components/mobile-navigation";
 import { directContactHref } from "@/config/site";
 
 const navigation = [
@@ -31,17 +31,11 @@ export function SiteHeader() {
           {directContactHref ? <a href={action.href} className="nav-contact" target="_blank" rel="noreferrer">{action.label}</a> : <Link href={action.href} className="nav-contact">{action.label}</Link>}
         </nav>
 
-        <details className="mobile-nav">
-          <summary aria-label="Abrir navegação">
-            <Menu />
-          </summary>
-          <nav aria-label="Navegação móvel">
-            {navigation.map((item) => (
-              <Link href={item.href} key={item.href}>{item.label}</Link>
-            ))}
-            {directContactHref ? <a href={action.href} target="_blank" rel="noreferrer">{action.label}</a> : <Link href={action.href}>{action.label}</Link>}
-          </nav>
-        </details>
+        <MobileNavigation
+          navigation={navigation}
+          action={action}
+          actionExternal={Boolean(directContactHref)}
+        />
       </div>
     </header>
   );

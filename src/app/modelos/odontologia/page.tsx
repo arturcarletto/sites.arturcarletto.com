@@ -10,6 +10,8 @@ export const metadata = createPageMetadata({
   title: "Conceito de site para odontologia",
   description: "Conceito demonstrativo acolhedor para uma clínica odontológica fictícia.",
   path: "/modelos/odontologia",
+  ogImage: "/og/odontologia",
+  ogImageAlt: "Conceito demonstrativo de site para odontologia criado por Artur Carletto",
 });
 
 const treatments = [

@@ -33,9 +33,9 @@ export default function Home() {
       <main id="conteudo">
         <section className="home-hero shell">
           <div className="home-hero__copy">
-            <p className="eyebrow"><span /> Engenheiro de Software · {siteConfig.shortLocation}</p>
-            <h1>Produtos digitais sólidos.<br /><em>Sites que abrem conversas.</em></h1>
-            <p className="hero-lead">Eu sou Artur Carletto, Engenheiro de Software em Joinville. Desenvolvo aplicações web, sites institucionais, landing pages e páginas comerciais para empresas — com foco em uso real, velocidade e manutenção.</p>
+            <p className="eyebrow"><span /> Engenheiro de Software · sites para empresas</p>
+            <h1>Sites para empresas<br /><em>que abrem conversas.</em></h1>
+            <p className="hero-lead">Eu sou Artur Carletto, Engenheiro de Software em {siteConfig.shortLocation}. Desenvolvo sites institucionais, landing pages e soluções web que apresentam melhor a empresa, funcionam bem no celular e facilitam o contato comercial.</p>
             <div className="hero-actions">
               <LinkButton href={primaryAction.href} variant="blue" external={primaryAction.external}>{primaryAction.label}</LinkButton>
               <Link href="/modelos" className="text-link">Ver demonstrações <ArrowRight /></Link>

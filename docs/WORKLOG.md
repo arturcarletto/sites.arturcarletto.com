@@ -291,3 +291,48 @@ Executar a matriz de validação final, corrigir qualquer regressão encontrada 
 ### Próximo passo
 
 Revisar os ativos reais pendentes e registrar no Obsidian, após aprovação, as decisões listadas no resumo final. Não há alteração estrutural incompleta no workspace.
+
+## Checkpoint 9 — Refinamento comercial final
+
+### Estado inicial
+
+- Auditoria em produção confirmou uma base visual e técnica forte, sem necessidade de redesign.
+- Pendências objetivas desta rodada: favicon padrão da Vercel, ausência de imagem Open Graph, `twitter:card` pequeno, hero ainda amplo nos primeiros segundos, menu móvel sem Escape/rótulo dinâmico, contato móvel ausente e baixa exposição do estado Metal.
+- Git estava limpo antes da implementação (`main...origin/main`). O vault do Obsidian foi consultado somente para leitura.
+
+### Alterações concluídas
+
+- Favicon antigo removido e substituído por ícone AC gerado em 64 × 64; Apple touch icon AC adicionado em 180 × 180.
+- Metadados da Home atualizados de “Artur Carletto — Sites e landing pages” para “Artur Carletto — Sites para empresas”, com nova descrição comercial aprovada.
+- Open Graph passou a declarar URL absoluta, `site_name`, tipo, imagem 1200 × 630, dimensões e texto alternativo; Twitter passou a `summary_large_image`.
+- Criada imagem social editorial da Home baseada nos conceitos reais de estética automotiva, odontologia e climatização.
+- As quatro demonstrações receberam metadados e imagens sociais próprios, sempre identificados como conceitos demonstrativos.
+- Hero da Home passou a declarar “Sites para empresas que abrem conversas” e ganhou copy mais direta sobre apresentação, mobile e contato comercial.
+- Ritmo do hero em 320 px refinado; o CTA principal fica visível na primeira tela testada sem comprimir a composição desktop.
+- Contato móvel de Artur aparece após rolagem nas páginas institucionais, respeita safe areas, recolhe para ícone em 320 px e some ao encontrar CTA final/footer. Nas demos, o contato persistente continua oculto no mobile para preservar a experiência fictícia; a transição acontece no fechamento contextual.
+- Concept bar e nota final das demos receberam uma transição mais natural para o portfólio/contato de Artur, sem transformar a empresa fictícia em cliente.
+- Menu móvel agora fecha com Escape, altera `aria-label` entre “Abrir navegação” e “Fechar navegação” e devolve foco ao botão.
+- Móveis planejados recebeu uma revisão curta de copy e o estado Metal ganhou crop, exposição e overlay mais claros.
+
+### Retrato
+
+- Nenhuma fotografia real autorizada de Artur foi encontrada no repositório. O monograma existente foi preservado e nenhuma imagem genérica ou gerada foi introduzida.
+- **PENDÊNCIA HUMANA: adicionar retrato real de Artur.**
+
+### Validação
+
+- `npm run lint`: concluído sem erros.
+- `npm run build`: concluído com sucesso no Next.js 16.3.6, incluindo TypeScript e 14 rotas geradas.
+- Matriz local das oito rotas públicas em 1440, 1024, 768, 430, 390, 375 e 320 px: 56 combinações sem overflow horizontal, imagens quebradas ou contagem incorreta de `h1`.
+- Hero da Home inspecionado visualmente nos sete tamanhos; CTA principal visível em 320 × 700.
+- Quatro demos inspecionadas em 390 px; Metal, nota final e ausência de botão flutuante nas demos confirmados.
+- Menu móvel validado com abertura, rótulo acessível, Escape e retorno de foco.
+- Home e demonstração automotiva inspecionadas no HTML renderizado: canonical preservado, metadados absolutos, imagem 1200 × 630 e `summary_large_image` confirmados.
+- Imagens sociais e ícones responderam localmente e foram inspecionados visualmente no navegador integrado.
+- Nenhum deploy, alteração de DNS ou ação de infraestrutura foi executado.
+
+### WhatsApp e cache de compartilhamento
+
+- Após um deploy futuro, validar primeiro os URLs públicos `/og/home` e `/og/<segmento>` em HTTPS e confirmar resposta 200.
+- Em seguida, enviar a URL canônica em uma conversa de teste. Se o WhatsApp mantiver a miniatura antiga, testar uma URL com query temporária, por exemplo `?v=2`, ou aguardar a atualização do cache; a URL canônica do site não deve ser alterada por causa do cache.
+- A disponibilidade pública e o preview real do WhatsApp permanecem pendentes até o deploy, deliberadamente fora do escopo desta tarefa.
