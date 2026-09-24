@@ -315,6 +315,7 @@ img { max-width: 100%; }
   .home-demo-preview--main { width: 80%; height: 350px; }
   .home-demo-preview--top { width: 43%; height: 155px; }
   .home-demo-preview--mobile { width: 31%; height: 220px; right: 0; }
+  .home-demo-preview--mobile span { left: .35rem; right: .35rem; font-size: .72rem; justify-content: center; white-space: nowrap; }
   .home-demo-stack__note { display: none; }
   .home-hero__visual::before { width: 450px; height: 450px; }
   .manifesto-section { padding-block: 5rem; }
