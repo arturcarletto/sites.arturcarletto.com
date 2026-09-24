@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# sites.arturcarletto.com
 
-## Getting Started
+Commercial website, portfolio, and demonstration library for Artur Carletto, Software Engineer. The root domain `arturcarletto.com` remains reserved for Artur's broader professional presence.
 
-First, run the development server:
+## Requirements
+
+- Node.js 22.13+ recommended
+- npm 10+
+
+The current dependency set may warn on Node 22.12 because a transitive ESLint package requires Node 22.13 or newer.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Contact configuration
 
-To learn more about Next.js, take a look at the following resources:
+Verified contact data is centralized in `src/config/site.ts`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ts
+WHATSAPP_NUMBER: "5547992002457",
+EMAIL: "arturcarletto@gmail.com",
+LINKEDIN_URL: "https://www.linkedin.com/in/arturcarletto/",
+GITHUB_URL: "TODO",
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+WhatsApp is the primary commercial CTA. E-mail and LinkedIn are secondary channels. GitHub remains unset and is not rendered.
 
-## Deploy on Vercel
+## Prospect demonstrations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Targeted prospect pages use `/demo/<slug>` and are disabled by default. Add only approved, dedicated page components to `src/data/prospect-demos.ts`; these routes are non-indexed and excluded from the public sitemap. `noindex` is not access control. See `docs/ARCHITECTURE.md` for the safeguards.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The default canonical origin is `https://sites.arturcarletto.com`. The app is structured for Vercel; before production deployment, configure `NEXT_PUBLIC_SITE_URL` with that origin and run the quality checks above. DNS and deployment are intentionally outside the current scope.
+
+See `docs/PRODUCT.md`, `docs/DESIGN.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, and `docs/ASSETS.md` for product and implementation decisions.
